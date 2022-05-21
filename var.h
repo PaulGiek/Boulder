@@ -1,6 +1,7 @@
 #include "Input.h"
 #include "Servo.h"
 #include "Brake.h"
+#include "Steering.h"
 
 //Inputs
 //Throttle Pin, Steering Pin
@@ -23,9 +24,8 @@ int servoMaxPos = 180;
 Brake brake(3, A1);
 
 //Steering 
-Steering steering(5 , A0)
+Steering steering(5 , A0);
 
 
 //Emergency Disable
-emergencyPin = 9;
-pinMode(emergencyPin, INPUT_PULLUP);
+int emergencyPin = 9;

@@ -30,7 +30,7 @@ void Steering::update() {
   u = error * Kp + integralError * Ki + ((error - oldError) / dt) * Kd;
  
   //1500 is no movement. By running the Motor at a speed of u we correct for position offsets
-  linearActuator.writeMicroseconds(1500 + u);
+  motor.writeMicroseconds(1500 + u);
 
   oldTime = now;
   oldError = error;

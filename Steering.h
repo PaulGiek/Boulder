@@ -4,7 +4,7 @@
 #include "Arduino.h"
 #include "Servo.h"
 
-class Stearing {
+class Steering {
   public:
     Steering(uint8_t actuatorPin, uint8_t potentiometerPinNew);
     void setTargetPercent(int newTarget);

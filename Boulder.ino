@@ -6,6 +6,7 @@ void setup() {
   
   throttleServo.attach(throttleServoPin);
   throttleServo.write(servoMinPos);
+  pinMode(emergencyPin, INPUT_PULLUP);
 }
 
 void loop() {
@@ -14,7 +15,7 @@ void loop() {
       //Set gas to 0
       throttleServo.write(servoMinPos);
       //fully extend linear actuator to brake
-      brake.setTarget(100);
+      brake.setTargetPercent(100);
       //Steer straight
       steering.setTargetPercent(0.5);
 
