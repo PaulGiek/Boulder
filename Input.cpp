@@ -11,15 +11,9 @@ InputPackage Input::update() {
     throttleValue = throttlePPM.latestValidChannelValue(1, 0);
     steeringValue = steeringPPM.latestValidChannelValue(1, 0);
 
-    //Calculate the value in percent
-    throttleValuePercent = (maxValue - 1000) / (throttleValue - 1000);
-    steeringValuePercent = (maxValue - 1000) / (steeringValue - 1000);
-
     InputPackage inputs = {
         throttleValue,
         steeringValue,
-        throttleValuePercent,
-        steeringValuePercent
     };
 
     return inputs;

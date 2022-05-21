@@ -11,9 +11,6 @@
 struct InputPackage {
   int throttleValue;
   int steeringValue;
-
-  int throttleValuePercent;
-  int steeringValuePercent;
 };
 
 class Input {
@@ -32,9 +29,6 @@ class Input {
     
     int throttleValue;
     int steeringValue;
-
-    int throttleValuePercent;
-    int steeringValuePercent;
 };
 
 
