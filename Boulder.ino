@@ -9,6 +9,21 @@ void setup() {
 }
 
 void loop() {
+  if (emergencyPin) {
+    while(emergencyPin) {
+      //Set gas to 0
+      throttleServo.write(servoMinPos);
+      //fully extend linear actuator to brake
+      brake.setTarget(100);
+      //Steer straight
+      steering.setTargetPercent(0.5);
+
+      steering.update();
+      brake.update();
+      
+    }
+  }
+  
   inputValues = inputs.update();
   Serial.print("Throttle Input Received: " + (String)inputValues.throttleValue + " Steering Input Received: " + (String)inputValues.steeringValue);
 

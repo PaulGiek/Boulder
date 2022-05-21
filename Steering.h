@@ -5,8 +5,6 @@
 #include "Servo.h"
 
 class Stearing {
-
-
   public:
     Steering(uint8_t actuatorPin, uint8_t potentiometerPinNew);
     void setTargetPercent(int newTarget);
@@ -28,7 +26,7 @@ class Stearing {
 
     
       
-    //The target value in percent (extended by targetPercent)
+    //The target value in percent (0 is hard left 1 is hard right)
     int targetPercent = 0;
 
     //Potentiometer bounds (max is full right)

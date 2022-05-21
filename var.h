@@ -24,3 +24,8 @@ Brake brake(3, A1);
 
 //Steering 
 Steering steering(5 , A0)
+
+
+//Emergency Disable
+emergencyPin = 9;
+pinMode(emergencyPin, INPUT_PULLUP);
