@@ -21,3 +21,6 @@ int servoMaxPos = 180;
 //Brake
 //Actuator Pin, Potentiometer Pin
 Brake brake(3, A1);
+
+//Steering 
+Steering steering(5 , A0)

@@ -1,22 +1,23 @@
-#include "Brake.h"
+#include "Steering.h"
 
-Brake::Brake(uint8_t actuatorPin, uint8_t potentiometerPinNew) {
-  linearActuator.attach(actuatorPin);
+Steering::Steering(uint8_t actuatorPin, uint8_t potentiometerPinNew) {
+  motor.attach(actuatorPin);
     
   //Set the potentiometerPin and declare it as an output
   potentiometerPin = potentiometerPinNew; 
   pinMode(potentiometerPin, INPUT);
 }
 
-void Brake::setTargetPercent(int newTarget) {
+void Steering::setTargetPercent(int newTarget) {
   targetPercent = newTarget;
-  Serial.println("Brake is trying to be extended by: " + targetPercent);
+  Serial.println("Steering is trying to archieve: " + targetPercent);
 }
 
-void Brake::update() {
+void Steering::update() {
+  //Full left is 0
   int pos = analogRead(potentiometerPin);
   int posPercent = pos / potentiometerMax;
-  Serial.println("Brake Potentiometer Pos (%) is: " + posPercent);
+  Serial.println("Steering Potentiometer Pos (%) is: " + posPercent);
 
   float u;
   unsigned long now = millis();

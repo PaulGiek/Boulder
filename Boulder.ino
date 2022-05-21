@@ -10,6 +10,7 @@ void setup() {
 
 void loop() {
   inputValues = inputs.update();
+  Serial.print("Throttle Input Received: " + (String)inputValues.throttleValue + " Steering Input Received: " + (String)inputValues.steeringValue);
 
   
   if (inputValues.throttleValue > 1500) {
@@ -26,6 +27,10 @@ void loop() {
     brake.setTargetPercent(brakeExtendPercent);
   }
 
+  //Convert the 1000 - 2000 range to a 0 - 1000 range and then to a 0 - 1 range 
+  float stearingTargetPercentNew = ((inputValues.steeringValue - 1000)/1000);
+  steering.setTargetPercent(stearingTargetPercentNew);
 
+  steering.update();
   brake.update();
 }
