@@ -11,7 +11,6 @@ void setup() {
 
 void loop() {
   if (emergencyPin) {
-    while(emergencyPin) {
       //Set gas to 0
       throttleServo.write(servoMinPos);
       //fully extend linear actuator to brake
@@ -19,6 +18,7 @@ void loop() {
       //Steer straight
       steering.setTargetPercent(0.5);
 
+    while(emergencyPin) {
       steering.update();
       brake.update();
       
